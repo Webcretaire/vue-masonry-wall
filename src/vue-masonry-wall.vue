@@ -171,6 +171,7 @@
        * Redraw masonry
        */
       redraw() {
+        this.cursor = 0; // Added from upstream repo in order not to lose the existing items
         this.ready = false
         this.columns.splice(0)
         this.cursor = 0
