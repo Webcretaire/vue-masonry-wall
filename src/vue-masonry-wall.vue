@@ -249,8 +249,6 @@
 
   .masonry-bottom {
     flex-grow: 1;
-    margin-top: -300px;
-    padding-top: 300px;
     min-height: 100px;
     z-index: -1;
   }
