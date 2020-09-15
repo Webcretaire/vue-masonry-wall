@@ -61,39 +61,8 @@
         type: Object,
         required: false
       },
-
-      /**
-       * SSR has no clue what is the size of your height of your element or width of the browser.
-       * You can however guess based on user-agent: https://github.com/nuxt-community/device-module
-       * This param allow you to preload a config for SSR rendering, it will distribute your items into all columns evenly.
-       *
-       * Once the client is mounted, it will redraw if the config is different from SSR.
-       *
-       * {
-       *     column: 2
-       * }
-       */
-      ssr: {
-        type: Object,
-        required: false
-      }
     },
     data() {
-      const count = this.ssr && this.ssr.columns
-      if (count > 0) {
-        const columns = _newColumns(count)
-
-        for (let i = 0; i < this.items.length; i++) {
-          columns[i % count].indexes.push(i)
-        }
-
-        return {
-          columns: columns,
-          cursor: this.items.length,
-          ready: false
-        }
-      }
-
       return {
         columns: [],
         cursor: 0,
