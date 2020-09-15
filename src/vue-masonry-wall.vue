@@ -79,7 +79,7 @@
         }
       }
 
-      this.redraw();
+      this.$nextTick(() => this.redraw());
       window.addEventListener('resize', this.$resize)
     },
     /**
